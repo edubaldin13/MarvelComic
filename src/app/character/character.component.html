@@ -1,0 +1,33 @@
+<div
+  class="card"
+  style="width: 15rem; height: 25rem; margin-bottom: 3rem; margin-top: 3rem"
+>
+  <div class="card-body">
+    <h5 class="card-title">{{ characterName }}</h5>
+
+    <p
+      class="card-text"
+      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      *ngIf="characterDescription"
+    >
+      {{ characterDescription }}
+    </p>
+
+    <p
+      class="card-text"
+      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      *ngIf="!characterDescription"
+    >
+      No description available
+    </p>
+    <img [src]="characterThumbUpdate" alt="" style="border-radius: 1rem" />
+    <div>
+      <a
+        (click)="goToInfos()"
+        class="btn btn-primary"
+        style="margin-bottom: 1rem; position: absolute; bottom: 0px"
+        >Check it out for more!</a
+      >
+    </div>
+  </div>
+</div>

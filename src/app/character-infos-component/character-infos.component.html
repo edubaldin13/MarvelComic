@@ -1,0 +1,25 @@
+<div class="container"></div>
+<div
+  class="card"
+  style="width: 25rem; min-height: 20rem; margin-bottom: 3rem; margin-top: 3rem"
+>
+  <div class="card-body" style="justify-content: center; text-align: center">
+    <h5 class="card-title">{{ character?.name }}</h5>
+
+    <p class="card-text" *ngIf="character?.description">
+      {{ character?.description }}
+    </p>
+
+    <p
+      class="card-text"
+      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
+      *ngIf="!character?.description"
+    >
+      No description available
+    </p>
+    <img [src]="characterThumbNew" alt="" style="border-radius: 1rem" />
+  </div>
+  <a [routerLink]="'/'" class="btn btn-primary" style="margin: 1rem"
+    >Return home</a
+  >
+</div>

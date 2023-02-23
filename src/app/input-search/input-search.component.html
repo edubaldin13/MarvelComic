@@ -1,0 +1,10 @@
+<nav class="d-flex navbar navbar-light bg-light">
+  <div class="container">
+    <input
+      type="text"
+      [(ngModel)]="enteredSearchValue"
+      (input)="onSearchTextChanged()"
+      placeholder="Search by name below"
+    />
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+<app-input-search
+  (searchTextChanged)="onSearchTextEntered($event)"
+></app-input-search>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let character of characters; let i = index" class="col">
+      <app-character
+        *ngIf="
+          searchText === '' || character.name.toLowerCase().includes(searchText)
+        "
+        [characterName]="character.name"
+        [characterDescription]="character.description"
+        [characterThumb]="character.thumbnail.path"
+        [index]="i"
+      ></app-character>
+    </div>
+  </div>
+</div>
+<div style="display: flex">
+  <button
+    (click)="loadMoreCards()"
+    class="btn btn-primary"
+    style="margin-top: 1rem; margin: auto"
+  >
+    Load more
+  </button>
+</div>
